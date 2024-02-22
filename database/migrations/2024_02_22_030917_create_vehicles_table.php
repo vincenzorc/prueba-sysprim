@@ -19,9 +19,9 @@ return new class extends Migration
             $table->date('date_entry');
 
             $table->unsignedBigInteger('mark_id');
-            $table->foreign('mark_id')->references('id')->on('marks');
+            $table->foreign('mark_id')->references('id')->on('marks')->cascadeOnDelete()->cascadeOnUpdate();
             $table->unsignedBigInteger('type_id');
-            $table->foreign('type_id')->references('id')->on('types');
+            $table->foreign('type_id')->references('id')->on('types')->cascadeOnDelete()->cascadeOnUpdate();
 
             $table->timestamps();
         });

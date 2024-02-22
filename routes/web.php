@@ -22,7 +22,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
+    Route::get('/vehicles', function () {
         return view('dashboard');
-    })->name('dashboard');
+    })->name('vehicles');
 });

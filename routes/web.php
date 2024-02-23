@@ -26,7 +26,11 @@ Route::middleware([
         return view('vehicle');
     })->name('vehicles');
 
-    Route::view('/marks', 'mark')->name('mark');
+    Route::get('/marks', function () {
+        return view('mark');
+    })->name('mark');
 
-    Route::view('/types', 'type')->name('type');
+    Route::get('/types', function () {
+        return view('type');
+    })->name('type');
 });

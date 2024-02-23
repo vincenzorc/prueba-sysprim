@@ -41,7 +41,7 @@ class VehicleCreateForm extends Form
                 'required',
                 'string',
                 'regex:/^[A-Za-z]{3}\d{2}[A-Za-z]{2}$/',
-                Rule::unique('vehicles')->ignore($this->vehicle),
+                Rule::unique('vehicles'),
             ],
             'color' => 'required|alpha',
             'year' => 'required|date_format:Y',

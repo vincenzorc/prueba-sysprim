@@ -12,17 +12,17 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('vehicles') }}" :active="request()->routeIs('vehicles')">
+                    <x-nav-link href="{{ route('vehicles') }}" wire:navigate :active="request()->routeIs('vehicles')">
                         Vehiculos
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="">
+                    <x-nav-link href="{{ route('mark') }}" wire:navigate :active="request()->routeIs('mark')">
                         Marcas
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="">
+                    <x-nav-link href="{{ route('type') }}" wire:navigate :active="request()->routeIs('type')">
                         Modelos
                     </x-nav-link>
                 </div>

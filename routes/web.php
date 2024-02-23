@@ -23,6 +23,10 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/vehicles', function () {
-        return view('dashboard');
+        return view('vehicle');
     })->name('vehicles');
+
+    Route::view('/marks', 'mark')->name('mark');
+
+    Route::view('/types', 'type')->name('type');
 });

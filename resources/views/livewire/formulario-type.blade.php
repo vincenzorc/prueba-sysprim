@@ -54,10 +54,6 @@
                         <x-button wire:click="edit({{ $type->id }})">
                             Editar
                         </x-button>
-
-                        <x-danger-button onclick="confirm('¿Está seguro de eliminar el modelo?') || event.stopImmediatePropagation()" wire:click="destroy({{ $type->id }})">
-                            Eliminar
-                        </x-danger-button>
                     </td>
 
                 </tr>

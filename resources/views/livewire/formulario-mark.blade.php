@@ -54,10 +54,6 @@
                         <x-button wire:click="edit({{ $mark->id }})">
                             Editar
                         </x-button>
-
-                        <x-danger-button onclick="confirm('¿Está seguro de eliminar la marca?') || event.stopImmediatePropagation()" wire:click="destroy({{ $mark->id }})">
-                            Eliminar
-                        </x-danger-button>
                     </td>
 
                 </tr>

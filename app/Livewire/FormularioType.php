@@ -44,12 +44,6 @@ class FormularioType extends Component
         $this->typeEdit->update();
     }
 
-    public function destroy($typeId)
-    {
-        $type = Type::find($typeId);
-        $type->delete();
-    }
-
     public function render()
     {
         $types = Type::select('type_name','id')

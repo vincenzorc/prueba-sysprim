@@ -44,12 +44,6 @@ class FormularioMark extends Component
         $this->markEdit->update();
     }
 
-    public function destroy($markId)
-    {
-        $mark = Mark::find($markId);
-        $mark->delete();
-    }
-
     public function render()
     {
         $marks = Mark::select('mark_name','id')

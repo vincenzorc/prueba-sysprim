@@ -39,7 +39,7 @@
                 <x-label>
                     Fecha de ingreso
                 </x-label>
-                <x-input class="w-full" wire:model="vehicleCreate.date_entry" />
+                <x-input-date class="w-full" wire:model="vehicleCreate.date_entry" />
                 <x-input-error for="vehicleCreate.date_entry" />
             </div>
 
@@ -115,7 +115,7 @@
                     <td class="py-4 px-6">{{ $vehicle->placa }}</td>
                     <td class="py-4 px-6">{{ $vehicle->color }}</td>
                     <td class="py-4 px-6">{{ $vehicle->year }}</td>
-                    <td class="py-4 px-6">{{ $vehicle->date_entry }}</td>
+                    <td class="py-4 px-6">{{ date('d-m-Y', strtotime($vehicle->date_entry)) }}</td>
                     <td class="py-4 px-6">{{ $vehicle->mark->mark_name }}</td>
                     <td class="py-4 px-6">{{ $vehicle->type->type_name }}</td>
                     <td class="py-4 px-6">
@@ -181,7 +181,7 @@
                             <x-label>
                                 Fecha de ingreso
                             </x-label>
-                            <x-input class="w-full" wire:model="vehicleEdit.date_entry" />
+                            <x-input-date class="w-full" wire:model="vehicleEdit.date_entry" />
                             <x-input-error for="vehicleEdit.date_entry" />
                         </div>
             

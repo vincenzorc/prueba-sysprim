@@ -2,20 +2,20 @@
     
     <div class="bg-white shadow rounded-lg p-6 mb-9">
 
-        <x-button class="mb-5" wire:click="$toggle('showFormCreateMark')">
+        <x-button class="mb-5" wire:click="$toggle('showFormCreateType')">
             Mostrar Formulario
         </x-button>
 
-        @if ($showFormCreateMark)
+        @if ($showFormCreateType)
         <form class="mt-4" wire:submit="save()">
 
             <div class="grid grid-cols-2 gap-4">
                 <div class="mb-4">
                     <x-label>
-                        Nombre de la marca
+                        Nombre del modelo
                     </x-label>
-                    <x-input class="w-full" wire:model="markCreate.mark_name" />
-                    <x-input-error for="markCreate.mark_name" />
+                    <x-input class="w-full" wire:model="typeCreate.type_name" />
+                    <x-input-error for="typeCreate.type_name" />
                 </div>
             </div>
 
@@ -31,7 +31,7 @@
     <div class="bg-white shadow rounded-lg p-6 mt-6">
 
         <div class="mb-4">
-            <x-input class="w-full" placeholder="Buscar marca..." wire:model.live="searchMark" />
+            <x-input class="w-full" placeholder="Buscar modelo..." wire:model.live="searchType" />
         </div>
 
         <div class="flex items-center justify-center min-h-[450px]">
@@ -46,16 +46,16 @@
                 </thead>
                 <tbody>
 
-                    @foreach ($marks as $mark)
-                <tr class="bg-white border-b" wire:key="mark-{{ $mark->id }}">
+                    @foreach ($types as $type)
+                <tr class="bg-white border-b" wire:key="mark-{{ $type->id }}">
 
-                    <td class="py-4 px-6">{{ $mark->mark_name }}</td>
+                    <td class="py-4 px-6">{{ $type->type_name }}</td>
                     <td class="py-4 px-6">
-                        <x-button wire:click="edit({{ $mark->id }})">
+                        <x-button wire:click="edit({{ $type->id }})">
                             Editar
                         </x-button>
 
-                        <x-danger-button onclick="confirm('¿Está seguro de eliminar la marca?') || event.stopImmediatePropagation()" wire:click="destroy({{ $mark->id }})">
+                        <x-danger-button onclick="confirm('¿Está seguro de eliminar el modelo?') || event.stopImmediatePropagation()" wire:click="destroy({{ $type->id }})">
                             Eliminar
                         </x-danger-button>
                     </td>
@@ -71,13 +71,13 @@
         </div>
 
         <div class="mt-4">
-            {{ $marks->links(data: ['scrollTo' => false]) }}
+            {{ $types->links(data: ['scrollTo' => false]) }}
         </div>
 
         <form wire:submit="update()">
-            <x-dialog-modal wire:model="markEdit.open">
+            <x-dialog-modal wire:model="typeEdit.open">
                 <x-slot name="title">
-                    Marca a actualizar
+                    Modelo a actualizar
                 </x-slot>
 
                 <x-slot name="content">
@@ -85,10 +85,10 @@
                         <div class="grid grid-cols-2 gap-4">
                             <div class="mb-4">
                                 <x-label>
-                                    Nombre de la marca
+                                    Nombre del modelo
                                 </x-label>
-                                <x-input class="w-full" wire:model="markEdit.mark_name" />
-                                <x-input-error for="markEdit.mark_name" />
+                                <x-input class="w-full" wire:model="typeEdit.type_name" />
+                                <x-input-error for="typeEdit.type_name" />
                             </div>
                         </div>
             
@@ -99,7 +99,7 @@
                         Actualizar
                     </x-button>
 
-                    <x-danger-button class="" wire:click="$set('markEdit.open', false)">
+                    <x-danger-button class="" wire:click="$set('typeEdit.open', false)">
                         Cancelar
                     </x-danger-button>
                 </x-slot>
